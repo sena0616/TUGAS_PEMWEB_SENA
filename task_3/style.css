@@ -1,0 +1,268 @@
+/* Tugas Individu 3 - Pemrograman Web | Tema Valorant */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rajdhani:wght@500;600&display=swap");
+
+:root {
+  --merah: #ff4655;
+  --merah-tua: #bd3944;
+  --navy: #0f1923;
+  --navy-muda: #1f2933;
+  --krem: #ece8e1;
+  --abu: #8b97a3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Rajdhani", "Segoe UI", Arial, sans-serif;
+  font-size: 1.1rem;
+  color: var(--krem);
+  min-height: 100vh;
+  background-color: var(--navy);
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(255, 70, 85, .28), transparent 40%),
+    radial-gradient(circle at 90% 85%, rgba(255, 70, 85, .18), transparent 45%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, .025) 0 2px, transparent 2px 26px),
+    linear-gradient(180deg, #14212d, #0a1118);
+  background-attachment: fixed;
+  line-height: 1.5;
+}
+
+h1, h2 {
+  font-family: "Oswald", Impact, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+/* Layout */
+header {
+  padding: 36px 16px 28px;
+  text-align: center;
+  border-bottom: 4px solid var(--merah);
+  background: linear-gradient(180deg, #1a2733, var(--navy));
+}
+header h1 { margin: 0; font-size: 2.6rem; color: var(--krem); }
+header p { margin: 4px 0 0; color: var(--abu); letter-spacing: .08em; }
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: var(--navy-muda);
+}
+nav a {
+  padding: 8px 24px;
+  color: var(--krem);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  background: #2b3947;
+}
+nav a:hover { background: var(--merah-tua); }
+nav a.aktif { background: var(--merah); color: #fff; }
+
+main { max-width: 740px; margin: 36px auto; padding: 0 16px; }
+
+footer {
+  padding: 16px;
+  text-align: center;
+  font-size: .95rem;
+  color: var(--abu);
+  background: #0a1118;
+  border-top: 1px solid #2b3947;
+}
+
+/* Box (sudut terpotong seperti UI Valorant) */
+.box {
+  position: relative;
+  padding: 32px;
+  background: var(--navy-muda);
+  border-left: 5px solid var(--merah);
+  clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 28px 100%, 0 calc(100% - 28px));
+}
+.box h2 {
+  margin: 0 0 24px;
+  padding-bottom: 10px;
+  font-size: 1.7rem;
+  color: var(--merah);
+  border-bottom: 1px solid #3a4a5a;
+}
+
+/* Form */
+.form-group { margin-bottom: 18px; }
+label, .label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  color: var(--krem);
+}
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--krem);
+  background: var(--navy);
+  border: 1px solid #3a4a5a;
+  border-bottom: 2px solid var(--abu);
+  border-radius: 0;
+}
+input::placeholder, textarea::placeholder { color: #5d6b79; }
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--merah);
+  border-bottom-color: var(--merah);
+  background: #131f2b;
+}
+input[type="radio"] { accent-color: var(--merah); }
+.radio-group label { display: inline-block; margin-right: 24px; font-weight: 500; }
+
+button, .btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: var(--merah);
+  cursor: pointer;
+  clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+}
+button:hover, .btn:hover { background: var(--merah-tua); }
+.btn-abu { background: #3a4a5a; }
+.btn-abu:hover { background: #4d6073; }
+
+/* Tabel */
+table { width: 100%; margin-bottom: 20px; border-collapse: collapse; }
+th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid #3a4a5a; }
+th {
+  width: 35%;
+  font-weight: 600;
+  letter-spacing: .05em;
+  color: var(--merah);
+  background: rgba(255, 70, 85, .08);
+}
+tr:nth-child(even) td { background: rgba(255, 255, 255, .03); }
+tr:hover td { background: rgba(255, 70, 85, .1); }
+
+/* Catatan query string */
+.catatan {
+  margin-bottom: 22px;
+  padding: 12px 14px;
+  font-size: .95rem;
+  color: var(--abu);
+  background: var(--navy);
+  border-left: 3px solid var(--merah);
+}
+.catatan code {
+  display: block;
+  margin-top: 6px;
+  font-family: Consolas, monospace;
+  font-size: .85rem;
+  word-break: break-all;
+  color: var(--krem);
+}
+
+/* Fieldset & legend */
+fieldset {
+  margin: 0 0 22px;
+  padding: 18px 18px 6px;
+  border: 1px solid #3a4a5a;
+  border-top: 3px solid var(--merah);
+  min-inline-size: 0;
+}
+legend {
+  padding: 0 10px;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--merah);
+}
+
+/* Layout form dua kolom (grid) */
+.grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
+.grid-form .penuh { grid-column: 1 / 3; }
+
+.tombol { display: flex; gap: 12px; justify-content: flex-start; }
+
+/* Kartu ringkasan (flexbox) */
+.kartu-wrap { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 24px; }
+.kartu {
+  flex: 1 1 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 10px;
+  background: var(--navy);
+  border-top: 3px solid var(--merah);
+}
+.kartu span { font-size: .9rem; color: var(--abu); letter-spacing: .08em; }
+.kartu strong { font-family: "Oswald", sans-serif; font-size: 1.5rem; color: var(--krem); }
+
+/* Tabel: caption, thead, colspan */
+caption {
+  padding: 8px 0;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--abu);
+  border-top: 1px solid var(--merah);
+}
+thead th {
+  width: auto;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--merah);
+}
+th[colspan].sub { width: auto; text-align: left; color: var(--krem); background: #2b3947; }
+tbody tr:last-child td { border-bottom: none; }
+
+@media (max-width: 480px) {
+  header h1 { font-size: 2rem; }
+  .box { padding: 20px; }
+  th { width: 40%; }
+  .grid-form { grid-template-columns: 1fr; }
+  .grid-form .penuh { grid-column: 1; }
+}
+
+/* Dekorasi latar belakang (murni CSS) */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+}
+body::before {
+  left: -120px;
+  bottom: -160px;
+  width: 520px;
+  height: 520px;
+  background: rgba(255, 70, 85, .10);
+  clip-path: polygon(0 0, 30% 0, 50% 55%, 70% 0, 100% 0, 58% 100%, 42% 100%);
+  transform: rotate(-12deg);
+}
+body::after {
+  right: -60px;
+  top: 90px;
+  width: 340px;
+  height: 14px;
+  background: var(--merah);
+  opacity: .55;
+  clip-path: polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+  transform: rotate(-35deg);
+  box-shadow: 0 40px 0 -2px rgba(255, 70, 85, .3), 0 80px 0 -4px rgba(255, 70, 85, .15);
+}
+header, nav, main, footer { position: relative; z-index: 1; }
+header { background: rgba(15, 25, 35, .75); }
+footer { background: rgba(10, 17, 24, .9); }

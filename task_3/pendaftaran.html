@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join the Squad - Pendaftaran Player Valorant ITERA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Join the Squad</h1>
+    <p>Pendaftaran Player Valorant ITERA</p>
+  </header>
+
+  <nav>
+    <a href="pendaftaran.html" class="aktif">Pendaftaran</a>
+    <a href="detail.html">Detail Player</a>
+  </nav>
+
+  <main>
+    <section class="box">
+      <h2>Formulir Player</h2>
+
+      <!-- Method GET: data dikirim lewat query string di URL -->
+      <form action="detail.html" method="get">
+
+        <fieldset>
+          <legend>Data Diri</legend>
+          <div class="grid-form">
+            <div class="form-group penuh">
+              <label for="nama">Nama Lengkap</label>
+              <input type="text" id="nama" name="nama" placeholder="Contoh: Sena Permatasari" required>
+            </div>
+            <div class="form-group">
+              <label for="nim">NIM</label>
+              <input type="text" id="nim" name="nim" placeholder="Contoh: 124140018"
+                     pattern="[0-9]{9}" maxlength="9" title="NIM terdiri dari 9 digit angka" required>
+            </div>
+            <div class="form-group">
+              <label for="hp">No. HP</label>
+              <input type="tel" id="hp" name="hp" placeholder="08xxxxxxxxxx"
+                     pattern="08[0-9]{8,11}" title="Diawali 08, total 10-13 digit angka" required>
+            </div>
+            <div class="form-group penuh">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="nama@student.itera.ac.id" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Data Game</legend>
+          <div class="grid-form">
+            <div class="form-group">
+              <label for="riotid">Riot ID</label>
+              <input type="text" id="riotid" name="riotid" placeholder="Contoh: Sena#ITERA"
+                     pattern=".+#.+" title="Format: Nama#TAG" required>
+            </div>
+            <div class="form-group">
+              <label for="rank">Rank</label>
+              <select id="rank" name="rank">
+                <option value="Iron">Iron</option>
+                <option value="Bronze">Bronze</option>
+                <option value="Silver">Silver</option>
+                <option value="Gold">Gold</option>
+                <option value="Platinum">Platinum</option>
+                <option value="Diamond">Diamond</option>
+                <option value="Ascendant">Ascendant</option>
+                <option value="Immortal">Immortal</option>
+                <option value="Radiant">Radiant</option>
+              </select>
+            </div>
+            <div class="form-group penuh">
+              <span class="label">Role Utama</span>
+              <div class="radio-group">
+                <label><input type="radio" name="role" value="Duelist" required> Duelist</label>
+                <label><input type="radio" name="role" value="Initiator"> Initiator</label>
+                <label><input type="radio" name="role" value="Controller"> Controller</label>
+                <label><input type="radio" name="role" value="Sentinel"> Sentinel</label>
+              </div>
+            </div>
+            <div class="form-group penuh">
+              <label for="agent">Agent Main</label>
+              <!-- datalist: muncul saran, tapi tetap bisa diketik manual -->
+              <input type="text" id="agent" name="agent" list="daftar-agent"
+                     placeholder="Ketik nama agent, contoh: Jett" required>
+              <datalist id="daftar-agent">
+                <option value="Jett"><option value="Raze"><option value="Reyna"><option value="Phoenix">
+                <option value="Neon"><option value="Yoru"><option value="Iso"><option value="Waylay">
+                <option value="Sova"><option value="Breach"><option value="Skye"><option value="KAY/O">
+                <option value="Fade"><option value="Gekko"><option value="Tejo">
+                <option value="Brimstone"><option value="Omen"><option value="Viper"><option value="Astra">
+                <option value="Harbor"><option value="Clove">
+                <option value="Sage"><option value="Cypher"><option value="Killjoy"><option value="Chamber">
+                <option value="Deadlock"><option value="Vyse">
+              </datalist>
+            </div>
+            <div class="form-group penuh">
+              <label for="alasan">Alasan Bergabung</label>
+              <textarea id="alasan" name="alasan" rows="3" placeholder="Ceritakan singkat kenapa ingin bergabung"></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="tombol">
+          <button type="submit">Lock In</button>
+          <button type="reset" class="btn-abu">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>Informatika ITERA &copy; 2025</footer>
+</body>
+</html>
